@@ -31,30 +31,21 @@ void printNumber(int[] sumMassive)
         }
     }
 }
-int evenNumbers(int[] sumMassive)
+int oddSumNumbers(int[] sumMassive)
 {
-    int tamp = 0;
     int index = 0;
     int length = sumMassive.Length;
-    while(index < length)
+    int tamp = 0;
+    while(index<length)
     {
-        if(sumMassive[index] % 2 == 0)
-        {
-            tamp++;
-            index++;
-        }
-        else 
-        {
-            index++;
-        }
+        tamp += sumMassive[index];
+        index+=2;
     }
     return tamp;
 }
 int length = new Random().Next(4,10);
-int[] number = new int[length];
-enterNumber(number);
-int tamp = evenNumbers(number);
-printNumber(number);
+int[] numbers = new int[length];
+enterNumber(numbers);
+printNumber(numbers);
+int tamp = oddSumNumbers(numbers);
 Console.Write(tamp);
-
-
